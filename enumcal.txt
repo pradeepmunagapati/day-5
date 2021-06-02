@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    public enum cal
+    {
+        sum, sub, mul, div
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a,b;          
+            foreach (var item in Enum.GetValues(typeof(cal)))
+            {
+                Console.WriteLine(((int)item) + " " + item);
+            }
+            Console.WriteLine("Enter ur choice");
+            int Choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter two number");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            switch (Choice)
+            {
+                case (int)cal.sum:
+                    Console.WriteLine("Addition of two number is  : {0}", (a+b));
+                    break;
+                case (int)cal.sub:
+                    Console.WriteLine("Subraction of two number is  : {0}", (a - b));
+                    break;
+                case (int)cal.mul:
+                    Console.WriteLine("Multipication of two number is  : {0}", (a * b));
+                    break;
+                case (int)cal.div:
+                    Console.WriteLine("Division of two number is  : {0}", (a / b));
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid Choice");
+                    break;
+            }
+
+            Console.ReadLine();
+        }
+
+    }
+}

@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    public class MyException:Exception
+    {
+        public MyException(string message):base(message)
+        {
+
+        }
+    }
+    public class Fitness
+    {
+        int points = 0;
+        public void Showresult()
+        {
+            if(points<110)
+            {
+                throw new MyException("player failed the fitness test");
+
+            }
+            else
+            {
+                Console.WriteLine("player passes the fitness test");
+            }
+        } 
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Fitness f = new Fitness();
+            try
+            {
+                f.Showresult();
+            }
+            catch (MyException e)
+            {
+                Console.WriteLine("User defined exceptions: {0}", e.Message);
+            }
+            Console.ReadLine();
+        }
+
+    }
+}

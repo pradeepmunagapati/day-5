@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    public struct student
+    {
+        public string name;
+        public int roll;
+        public int age;
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student s1;
+            s1.name = "pradeep";
+            s1.roll = 45;
+            s1.age = 20;
+            Console.WriteLine("student details are");
+            Console.WriteLine("Name \t: " + s1.name + "\nRoll no.: " + s1.roll + "\nAge \t: " + s1.age);
+            Console.ReadLine();
+
+
+        }
+
+    }
+}

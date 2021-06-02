@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    public enum gender
+    {
+        male,female
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            int[] sno = new int[2];
+            string[] g = new string[2];
+            string[] name=new string[100];
+            for(i=0; i<2; i++)
+            {
+                sno[i] = i;
+                Console.WriteLine("enter student name");
+                name[i] = Console.ReadLine();
+                foreach (var item in Enum.GetValues(typeof(gender)))
+                {
+                    Console.WriteLine(((int)item) + " " + item);
+                }
+                g[i]=Console.ReadLine();
+            }
+            Console.WriteLine("s.no\tname\tGender");
+            for(i=0;i<2;i++)
+            {
+                Console.Write(sno[i]);
+                Console.Write("\t"+name[i]);
+                Console.Write("\t" + Enum.GetName(typeof(gender),Convert.ToInt32(g[i]))+"\n");
+            }
+
+            Console.ReadLine();
+        }
+
+    }
+}

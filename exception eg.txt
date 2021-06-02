@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 5,b;
+            int[] arr = new int[2];
+            try
+            {
+                Console.WriteLine(arr[2]);
+            }
+            catch
+            {
+                Console.WriteLine("some exception comes");
+            }
+            try
+            {
+                b = a / 0;
+            }
+            catch
+            {
+                Console.WriteLine("divide by 0 is not possible");
+            }
+            Console.ReadLine();
+        }
+
+    }
+}

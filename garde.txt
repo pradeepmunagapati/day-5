@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_5
+{
+    class student
+    {
+        public string name;
+        public char g,gr;
+        public int roll, sum = 0, i;
+        public double per,p;
+        public int[] marks = new int[3];
+        public double percentage()
+        {
+            Console.WriteLine("enter marks");
+            for (i = 0; i < 3; i++)
+            {
+                marks[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            foreach (var item in marks)
+            {
+                sum = sum + item;
+            }
+            per = sum * 100 / 500;
+            return per;
+
+        }
+        public char grade()
+        {
+            if (per >= 90 && per <= 100)
+            {
+                g = 'A';
+            }
+            else if (per >= 80 && per <= 90)
+            {
+                g = 'B';
+            }
+            else if (per >= 65 && per <= 80)
+            {
+                g = 'C';
+            }
+            else if (per >= 55 && per <= 65)
+            {
+                g = 'D';
+            }
+            else if (per >= 33 && per <= 55)
+            {
+                g = 'E';
+            }
+            else if (per < 33)
+            {
+                g = 'F';
+            }
+            else Console.WriteLine("incorrecr percentage");
+            return g;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            student[] s = new student[5];
+            for (i = 0; i < 3; i++)
+            {
+
+                s[i] = new student();
+                Console.WriteLine("Enter student roll.no ");
+                s[i].roll = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter student name: ");
+                s[i].name = Console.ReadLine();
+                s[i].p = s[i].percentage();
+                s[i].gr = s[i].grade();
+            }
+            Console.Write("S.no");
+            Console.Write("\t Roll.no");
+            Console.Write("\t name");
+            Console.Write("\t Percentage");
+            Console.Write("\t Grade");
+            for (i = 0; i < 3; i++)
+            {
+                Console.WriteLine("\n" + i);
+                Console.Write("\t" + s[i].roll);
+                Console.Write("\t\t" + s[i].name);
+                Console.Write("\t\t" + s[i].p);
+                Console.Write("\t" + s[i].gr + "\n");
+            }
+            Console.ReadLine();
+
+
+        }
+
+    }
+}
